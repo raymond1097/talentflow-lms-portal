@@ -10,6 +10,7 @@ const Input = forwardRef(({
   setShowPassword,
   action,
   error,
+  icon,
   ...props
 }, ref) => {
   const hasError = !!error;
@@ -34,6 +35,7 @@ const Input = forwardRef(({
           placeholder={placeholder}
           ref={ref}
           id={id}
+          icon={icon}
           className={`w-full relative px-4 py-3 rounded-lg border transition focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none ${
             hasError
               ? 'border-red-300 focus:ring-red-500'

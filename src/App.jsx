@@ -6,6 +6,8 @@ import EmailVerification from './app/auth/EmailVerification'
 import ForgotPassword from './app/auth/ForgotPassword'
 import SetNewPassword from './app/auth/SetNewPassword'
 import NotFound from './shared/ui/NotFound'
+import SettingsPage from './modules/admin/SettingsPage'
+import ChangePassword from './modules/admin/ChangePassword'
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="/email-verification" element={<EmailVerification />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/set-new-password" element={<SetNewPassword />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/settings/change-password" element={<ChangePassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

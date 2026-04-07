@@ -16,6 +16,11 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [learnerType, setLearnerType] = useState(userTypes[0]);
   const [discipline, setDiscipline] = useState(disciplines[0]);
+  const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [agreedTerms, setAgreedTerms] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();

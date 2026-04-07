@@ -15,26 +15,24 @@ const LoginPage = () => {
 
   const handleUserLogin = async () => {
     try {
-      const response = await fetch('/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-      if (response.ok) {
-        const data = await response.json();
-        // Assume token in data.token, store based on rememberMe
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      if (email === "admin@gmail.com" && password === "password") {
+        const fakeToken = "abc123"
+
         if (rememberMe) {
-          localStorage.setItem('token', data.token);
+          localStorage.setItem("authToken", fakeToken);
         } else {
-          sessionStorage.setItem('token', data.token);
+          sessionStorage.setItem("authToken", fakeToken);
         }
-        navigate("/");
+        navigate("/settings");
       } else {
-        alert("Login failed");
+        alert("Invalid email or password.");
       }
+
     } catch (error) {
-      console.error("Login error:", error);
-      alert("Login error");
+      console.error("Login failed:", error);
+      alert("Login failed. Please check your credentials and try again.");
     }
   };
 
@@ -66,6 +64,7 @@ const LoginPage = () => {
                     id="password"
                     placeholder="............"
                     action={(e) => setPassword(e.target.value)}
+                    icon={showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   />
                 </>
               }
